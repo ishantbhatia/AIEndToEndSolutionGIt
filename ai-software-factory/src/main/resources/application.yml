@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-software-factory
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  # PostgreSQL
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:factorydb}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # Ollama — same config style as your SBLangChain project
+  ai:
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      chat:
+        options:
+          model: ${OLLAMA_CHAT_MODEL:llama3}
+          temperature: 0.3
+          num-predict: 4096
+
+# App config
+factory:
+  workspace:
+    base-dir: ${FACTORY_WORKSPACE:/tmp/ai-factory-workspace}
+  git:
+    remote-url: ${GIT_REMOTE_URL:https://github.com/ishantbhatia/AIEndToEndSolutionGIt.git}
+    username: ${GIT_USERNAME:ishantbhatia}
+    password: ${GIT_PASSWORD:}
+    author-name: ${GIT_AUTHOR_NAME:Ishant Bhatia}
+    author-email: ${GIT_AUTHOR_EMAIL:ishantbhatia@example.com}
+    main-branch: main
+    prod-branch: prod
+  pipeline:
+    max-review-iterations: 3
+    test-timeout-seconds: 120

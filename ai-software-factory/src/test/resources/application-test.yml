@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3
+
+factory:
+  workspace:
+    base-dir: /tmp/test-factory
+  git:
+    remote-url:
+    username:
+    password:
+    author-name: Test
+    author-email: test@test.com
+    main-branch: main
+    prod-branch: prod
+  pipeline:
+    max-review-iterations: 1
+    test-timeout-seconds: 30

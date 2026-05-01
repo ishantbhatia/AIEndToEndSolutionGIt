@@ -1,0 +1,17 @@
+package com.ai.factory.model;
+
+public enum PipelineStatus {
+    UPLOADED,
+    PARSING,
+    REQUIREMENTS_EXTRACTED,
+    DESIGN_COMPLETE,
+    CODE_GENERATED,
+    REVIEW_IN_PROGRESS,
+    IMPROVEMENTS_APPLIED,
+    TESTS_GENERATED,
+    TESTS_PASSED,
+    COMMITTED,
+    PUSHED,
+    MERGED_TO_PROD,
+    FAILED
+}

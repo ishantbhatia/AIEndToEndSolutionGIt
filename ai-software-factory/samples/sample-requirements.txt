@@ -1,0 +1,18 @@
+Project: Simple Employee Directory API
+
+Build a basic Spring Boot REST API to add employees.
+
+Features:
+1. Add a new employee (email)
+
+Tech:
+- Spring Boot 3.x, Java 21
+- Spring Data JPA with postgresl database
+
+Entity:
+- Employee: id (Long, auto-generated), email (String)
+
+Endpoints:
+- POST   /api/employees       → create employee
+
+That's it. Keep the code minimal and clean.
