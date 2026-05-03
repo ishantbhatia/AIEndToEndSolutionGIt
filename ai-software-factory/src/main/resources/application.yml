@@ -48,3 +48,9 @@ factory:
   pipeline:
     max-review-iterations: 3
     test-timeout-seconds: 120
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springframework.web.client.RestClient: DEBUG
+    org.springframework.ai.ollama: DEBUG
